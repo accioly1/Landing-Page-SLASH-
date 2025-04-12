@@ -17,6 +17,8 @@ HTML5, CSS3, JavaScript.
 
 -Banner principal (hero section) com chamada de impacto;
 
+-Carrossel de Imagens;
+
 -Sessão de produtos em destaque (com imagem, nome e preço);
 
 -Dúvidas Frequentes (FAQ) com animação;
