@@ -39,4 +39,5 @@ Clique no link disponível da Vercel: https://landing-page-slash.vercel.app/
 - Digite no terminal: (git clone https://github.com/accioly1/Landing-Page-SLASH-.git);
 - O repositório sera clonado;
 - Após essa etapa, digite no terminal: (code .);
-- Pronto, abrirá sua IDE já com o projeto clonado.
+- Pronto, abrirá sua IDE já com o projeto clonado;
+- Para finalizar, utilize a extensão Live Server para visualizar a aplicação em tempo real.
