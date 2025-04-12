@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="src/styles/styles.css">
+    <link rel="stylesheet" href="src/styles/header.css">
+    <link rel="stylesheet" href="src/styles/home.css">
+    <link rel="stylesheet" href="src/styles/Carrousel.css">
+    <link rel="stylesheet" href="src/menu.css">
+    <link rel="stylesheet" href="src/styles/help.css">
+    <link rel="stylesheet" href="src/styles/footer.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Slash</title>
+</head>
+
+<body>
+    <header>
+        <nav id="bar">
+            <i class="fa-solid fa-gamepad" id="nav_logo"> SLASH</i> <!-- Nome do site e logo-->
+
+            <ul id="nav_list"> <!--Barra de navegação desktop-->
+                <li class="nav-item active">
+                    <a href="#home">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#menu">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#help">Ajuda</a>
+                </li>
+            </ul>
+
+            <button class="btn-default">
+
+                <div id="cta_buttons">
+                    <a href="#menu" class="btn-default">
+                        Compre agora
+                    </a>
+                </div>
+            </button> <!--Barra de navegação desktop-->
+
+            <button id="mobile_btn"> <!--Barra de navegação mobile-->
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+        <div id="mobile_menu">
+            <ul id="mobile_nav_list">
+                <li class="nav-item">
+                    <a href="#home">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#menu">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#help">Ajuda</a>
+                </li>
+            </ul>
+
+            <button class="btn-default">
+
+                <div id="cta_buttons">
+                    <a href="#menu" class="btn-default">
+                        Compre agora
+                    </a>
+                </div>
+            </button>
+        </div><!--Barra de navegação mobile-->
+
+
+
+        <!--Código do "ScrollSpy"-->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const sections = document.querySelectorAll('section');
+                const navItems = document.querySelectorAll('.nav-item');
+
+                function activateNavItem() {
+                    let current = '';
+
+                    sections.forEach((section) => {
+                        const sectionTop = section.offsetTop;
+                        const sectionHeight = section.clientHeight;
+
+                        if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                            current = section.getAttribute('id');
+                        }
+                    });
+
+                    navItems.forEach((li) => {
+                        li.classList.remove('active');
+                        const link = li.querySelector('a');
+                        if (link.getAttribute('href') === '#' + current) {
+                            li.classList.add('active');
+                        }
+                    });
+                }
+
+                window.addEventListener('scroll', activateNavItem);
+            });
+        </script>
+        <!--Código do "ScrollSpy"-->
+    </header>
+
+    <main id="content">
+        <section id="home"> <!--Sessão Home/Ínicio-->
+            <div class="shape"></div>
+            <div id="cta">
+                <h1 class="title">
+                    Só aqui você encontra os melhores
+                    <span>descontos</span>
+                </h1>
+
+                <p class="description">
+                    Equipe seu setup com estilo, rapidez e economia.
+                    Aproveite as ofertas antes que o loot acabe!
+                </p>
+
+                <div id="cta_buttons">
+                    <a href="#menu" class="btn-default">
+                        Ver produtos
+                    </a>
+                </div>
+            </div>
+
+            <div id="banner">
+                <img src="src/styles/images/teste tudo branco top.png" alt="">
+            </div>
+
+
+
+        </section> <!--Sessão Home/Ínicio-->
+
+        <section id="menu"> <!--Sessão dos Produtos/Carrossel de Imagens-->
+
+            <div class="slider"> <!--Código Carrossel de Imagens-->
+
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+
+                <div class="slides">
+
+
+                    <div class="slide first">
+                        <img src="src/styles/images/Design sem nome.png" alt="Imagem 1">
+
+                    </div>
+                    <div class="slide">
+                        <img src="src/styles/images/2.png" alt="Imagem 2">
+
+                    </div>
+                    <div class="slide">
+                        <img src="src/styles/images/3.png" alt="Imagem 3">
+
+                    </div>
+
+
+
+                </div>
+
+                <div class="navigation-auto">
+
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                </div>
+
+                <div class="manual-navigation">
+                    <label for="radio1" class="manual-btn"></label>
+                    <label for="radio2" class="manual-btn"></label>
+                    <label for="radio3" class="manual-btn"></label>
+                </div>
+
+
+            </div> <!--Código Carrossel de Imagens-->
+
+
+
+
+
+
+            <script src="javascript/script.js"></script>
+
+
+
+            <h2 class="section-title">Produtos</h2>
+            <h3 class="section-subtitle">Nossos produtos de qualidade</h3>
+
+            <div id="produtos"> <!--Layout e Produtos-->
+                <div class="produto">
+                    <div class="produto-compra">
+                        <i class="fa-solid fa-tag"></i>
+                    </div>
+
+                    <img src="src/styles/images/cadeira gamer oficial.png" class="produto-image" alt="Produto 1">
+
+                    <h3 class="produto-title">
+                        Cadeira Gamer
+                    </h3>
+
+                    <span class="produto-description">
+                        A Mancer Tyr é um produto único seu assento utiliza espuma moldada, sua estrutura é inteira de
+                        metal, além disso, ela utiliza um pistão de alta durabilidade e um mecanismo de ajuste premium,
+                        tudo para que você se sinta confortável independente se vai passar horas jogando ou trabalhando.
+                    </span>
+
+                    <div class="produto-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(100+)</span>
+                    </div>
+
+                    <div class="produto-price">
+                        <h4>R$699,99</h4>
+                        <button class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+
+                    <div class="produto-extra">
+                        <ul>
+                            <li>Mancer Tyr Purple Edition</li>
+                            <li>Medidas: Altura máxima recomendada de usuário 190cm, peso suportado até 130kg.</li>
+                            <li>Cor: Preta e Roxa</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="produto">
+                    <div class="produto-compra">
+                        <i class="fa-solid fa-tag"></i>
+                    </div>
+
+                    <img src="src/styles/images/oculos oficial foda.png" class="produto-image" alt="Produto 1">
+
+                    <h3 class="produto-title">
+                        Óculos de Realidade Virtual
+                    </h3>
+
+                    <span class="produto-description">
+                        Hardware avançado com gráfico de última geração para experiências impressionantes e
+                        inigualáveis, Processador Qualcomm Snapdragon XR2 ultrarrápido com 6 GB de RAM e 256GB de
+                        memória, dois controles Oculus Touch remodelados com rastreamento das mãos de última geração.
+                    </span>
+
+                    <div class="produto-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(50+)</span>
+                    </div>
+
+                    <div class="produto-price">
+                        <h4>R$2589,90</h4>
+                        <button class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+
+                    <div class="produto-extra">
+                        <ul>
+                            <li>Oculos Quest 2</li>
+                            <li>Compatibilidade: PC com Windows que atende aos requisitos mínimos</li>
+                            <li>Cor: Branco</li>
+                            <li>Armazenamento: 256 GB</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="produto">
+                    <div class="produto-compra">
+                        <i class="fa-solid fa-tag"></i>
+                    </div>
+
+                    <img src="src/styles/images/teclado 3.0.png" class="produto-image" alt="Produto 1">
+
+                    <h3 class="produto-title">
+                        Teclado Gamer
+                    </h3>
+
+                    <span class="produto-description">
+                        Projetado para o público brasileiro, o Netherbane conta com layout ABNT2, garantindo praticidade
+                        na digitação com a tecla "Ç" e outros caracteres essenciais. Sua conexão USB plug-and-play
+                        permite fácil instalação e compatibilidade com diversos dispositivos, garantindo uma experiência
+                        fluida e sem complicações.
+                    </span>
+
+                    <div class="produto-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(300+)</span>
+                    </div>
+
+                    <div class="produto-price">
+                        <h4>R$289,90</h4>
+                        <button class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+
+                    <div class="produto-extra">
+                        <ul>
+                            <li>Redragon Netherbane</li>
+                            <li>RGB: Sim</li>
+                            <li>Cor: Preto</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="produto">
+                    <div class="produto-compra">
+                        <i class="fa-solid fa-tag"></i>
+                    </div>
+
+                    <img src="src/styles/images/controle menu.png" class="produto-image" alt="Produto 1">
+
+                    <h3 class="produto-title">
+                        Controle Gamer
+                    </h3>
+
+                    <span class="produto-description">
+                        Inclui a tecnologia sem fio Xbox e Bluetooth® para jogos sem fio no console, PC, em dispositivos
+                        móveis e tablets. Conecte qualquer fone de ouvido compatível com a entrada de fone de ouvido
+                        estéreo de 3,5 mm.
+                    </span>
+
+                    <div class="produto-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(100+)</span>
+                    </div>
+
+                    <div class="produto-price">
+                        <h4>R$299,90</h4>
+                        <button class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+
+                    <div class="produto-extra">
+                        <ul>
+                            <li>XBOX Series Carbon White</li>
+                            <li>Bluetooth: Sim</li>
+                            <li>Cor: Carbon White</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="produto">
+                    <div class="produto-compra">
+                        <i class="fa-solid fa-tag"></i>
+                    </div>
+
+                    <img src="src/styles/images/foto mouse.png" class="produto-image" alt="Produto 1">
+
+                    <h3 class="produto-title">
+                        Mouse Gamer
+                    </h3>
+
+                    <span class="produto-description">
+
+                        MOUSE GAMER DARMOSHARK M3-4K
+                        O Mouse Gamer Darmoshark M3-4K oferece uma experiência de jogo excepcional com desempenho de
+                        alto nível e um design minimalista em branco.Sua conexão wireless proporciona liberdade de
+                        movimento com latência ultrabaixa, permitindo respostas rápidas e precisas, essenciais para
+                        jogos competitivos.
+                    </span>
+
+                    <div class="produto-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(200+)</span>
+                    </div>
+
+                    <div class="produto-price">
+                        <h4>R$449,90</h4>
+                        <button class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+
+                    <div class="produto-extra">
+                        <ul>
+                            <li>DPI: 26000</li>
+                            <li>Botões: 5</li>
+                            <li>Cor: Branca</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="produto">
+                    <div class="produto-compra">
+                        <i class="fa-solid fa-tag"></i>
+                    </div>
+
+                    <img src="src/styles/images/Kit gamer foto.png" class="produto-image" alt="Produto 1">
+
+                    <h3 class="produto-title">
+                        Kit Gamer
+                    </h3>
+
+                    <span class="produto-description">
+                        O combo perfeito pra quem quer entrar no mundo gamer sem gastar uma fortuna.
+                        Qualidade, estilo e conforto reunidos em um só kit.
+                    </span>
+
+                    <div class="produto-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(500+)</span>
+                    </div>
+
+                    <div class="produto-price">
+                        <h4>R$5679,90</h4>
+                        <button class="btn-default">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+
+                    <div class="produto-extra">
+                        <ul>
+                            <li>Computador Gamer: AMD Ryzen 5 5600, Radeon RX 580 8GB</li>
+                            <li>Teclado Gamer: Redragon Netherbane</li>
+                            <li>Mouse Gamer: Redragon King Pro</li>
+                            <li>Mousepad Gamer: Logitech G640</li>
+                            <li>Headset Gamer: Mancer Twilight</li>
+                            <li>Monitor Gamer: Acer Nitro</li>
+                        </ul>
+                    </div>
+                </div> <!--Layout e Produtos-->
+
+                <div id="product-modal" class="modal hidden"> <!--Abetura Modal dos Produtos-->
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <img class="modal-image" src="" alt="Imagem do Produto">
+                        <h3 class="modal-title"></h3>
+                        <p class="modal-description"></p>
+                        <div class="modal-extra"></div>
+                    </div>
+                </div> <!--Abetura Modal dos Produtos-->
+
+        </section> <!--Sessão dos Produtos/Carrossel de Imagens-->
+
+        <section id="help"> <!--Sessão Help/Ajuda-->
+            <h2 class="title">Dúvidas Frequentes</h2>
+
+            <div class="faq"> <!--FAQ/Dúvidas Frequentes-->
+                <div class="pergunta">
+                    <h3>Os produtos têm garantia? Por quanto tempo?</h3>
+
+                    <svg width="15" height="10" viewBox="0 0 42 25">
+                        <path d="M3 3L21 21L39 3" stroke="black" stroke-width="7" stroke-linecap="round"></path>
+                    </svg>
+                </div>
+                <div class="resposta">
+                    <p>
+                        Sim! Todos os nossos produtos têm garantia. O prazo pode variar de acordo com o fabricante, mas
+                        normalmente vai de 3 até 12 meses.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq">
+                <div class="pergunta">
+                    <h3>Quais formas de pagamento vocês aceitam?</h3>
+
+                    <svg width="15" height="10" viewBox="0 0 42 25">
+                        <path d="M3 3L21 21L39 3" stroke="black" stroke-width="7" stroke-linecap="round"></path>
+                    </svg>
+                </div>
+                <div class="resposta">
+                    <p>
+                        Aceitamos diversas formas de pagamento pra facilitar sua compra: cartão de crédito (com opção de
+                        parcelamento), débito, Pix, boleto bancário e carteiras digitais como Mercado Pago e PayPal.
+                        Tudo com segurança e praticidade.
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq">
+                <div class="pergunta">
+                    <h3>Qual o prazo de entrega?</h3>
+
+                    <svg width="15" height="10" viewBox="0 0 42 25">
+                        <path d="M3 3L21 21L39 3" stroke="black" stroke-width="7" stroke-linecap="round"></path>
+                    </svg>
+                </div>
+                <div class="resposta">
+                    <p>
+                        O prazo de entrega varia de acordo com o seu CEP e a forma de envio escolhida na hora da
+                        compra.Mas pode ficar tranquilo(a), a gente sempre envia rapidinho e acompanha tudo até chegar
+                        aí!
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq">
+                <div class="pergunta">
+                    <h3>E se o produto chegar com defeito?</h3>
+
+                    <svg width="15" height="10" viewBox="0 0 42 25">
+                        <path d="M3 3L21 21L39 3" stroke="black" stroke-width="7" stroke-linecap="round"></path>
+                    </svg>
+                </div>
+                <div class="resposta">
+                    <p>
+                        Se o seu produto chegar com defeito, não se preocupe! Você pode entrar em contato com a gente em
+                        até 7 dias após o recebimento que fazemos a troca ou devolução sem dor de cabeça. Após esse
+                        prazo, a garantia do fabricante cobre qualquer problema técnico.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq">
+                <div class="pergunta">
+                    <h3>Posso cancelar meu pedido depois de pagar?</h3>
+
+                    <svg width="15" height="10" viewBox="0 0 42 25">
+                        <path d="M3 3L21 21L39 3" stroke="black" stroke-width="7" stroke-linecap="round"></path>
+                    </svg>
+                </div>
+                <div class="resposta">
+                    <p>
+                        Sim, é possível cancelar o pedido, mas isso depende do status da sua compra. Se ainda não tiver
+                        sido enviado, o cancelamento é feito rapidinho e o reembolso é processado conforme a forma de
+                        pagamento usada. Se o pedido já estiver a caminho, a gente orienta direitinho como recusar a
+                        entrega ou fazer a devolução.
+                    </p>
+                </div>
+            </div> <!--FAQ/Dúvidas Frequentes-->
+
+        </section> <!--Sessão Help/Ajuda-->
+        <script src="javascript/script.js"></script>
+
+    </main>
+
+    <footer> <!--Rodapé-->
+        <div id="footer_content">
+            <div id="footer_contacts">
+                <h1>Slash</h1>
+                <p>Se torne um gamer de verdade</p>
+
+                <div id="footer_social_media">
+                    <a href="#" class="footer-link" id="instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" class="footer-link" id="facebook">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+
+                    <a href="#" class="footer-link" id="whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
+            <ul class="footer-list">
+                <li>
+                    <h3>Institucional</h3>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Quem somos?</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Localização</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Blog</a>
+                </li>
+            </ul>
+
+            <ul class="footer-list">
+                <li>
+                    <h3>Ajuda</h3>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Fale conosco</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Políticas de Privacidade</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Termos</a>
+                </li>
+            </ul>
+
+            <div id="footer_subscribe">
+                <h3>Novidades</h3>
+
+                <p>
+                    Digite seu e-mail para ser notificado sobre nossas novidades e promoções.
+                </p>
+
+                <div id="input_group">
+                    <input type="email" id="email">
+                    <button>
+                        <i class="fa-regular fa-envelope"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer_copyright">
+            &#169
+            2025 Todos os direitos reservados
+        </div>
+    </footer> <!--Rodapé-->
+
+
+
+
+
+    
+
+    <!--Código do Modal-->
+    <script>
+        const produtos = document.querySelectorAll('.produto');
+        const modal = document.getElementById('product-modal');
+        const modalImage = document.querySelector('.modal-image');
+        const modalTitle = document.querySelector('.modal-title');
+        const modalDescription = document.querySelector('.modal-description');
+        const modalExtra = document.querySelector('.modal-extra');
+        const closeModal = document.querySelector('.close-modal');
+
+        produtos.forEach(produto => {
+            produto.addEventListener('click', () => {
+                const imgSrc = produto.querySelector('img').src;
+                const title = produto.querySelector('.produto-title').innerText;
+                const description = produto.querySelector('.produto-description').innerText;
+                const extraInfo = produto.querySelector('.produto-extra')?.innerHTML || '';
+
+                modalImage.src = imgSrc;
+                modalTitle.innerText = title;
+                modalDescription.innerText = description;
+                modalExtra.innerHTML = extraInfo;
+
+                modal.classList.remove('hidden');
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+            }
+        });
+    </script>
+    <!--Código do Modal-->
+
+</body>
+
+</html>
