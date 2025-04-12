@@ -21,3 +21,7 @@ Essa é uma Landing Page desenvolvida com foco em apresentação visual, interat
 - Formulário de contato ou newsletter;
 - Rodapé (footer) com informações, redes sociais, políticas etc.
 
+  ## Como rodar
+
+- Clique no link que o site está hospedado na Vercel e se divirta.
+- Te desejo uma boa experiência.
